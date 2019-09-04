@@ -1,0 +1,21 @@
+<body class="A4">
+    <section class="sheet padding-10mm">
+
+        <div class="container">
+            <form *ngIf="show" [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="editor">
+                    </label>
+                    <quill-editor [style]="editorStyle" formControlName="editor">
+                    </quill-editor>
+                    asd
+                </div>
+                <button class="btn btn-primary mt-3">Submit</button>
+            </form>
+            <button (click)="makePdf()">make pdf</button>
+            <p #content id="content" [innerHTML]="editorContent"></p>
+        </div>
+
+    </section>
+
+</body>
