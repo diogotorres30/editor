@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ViewChild, ElementRef } from '@angular/core';
-import * as jsPDF from 'jspdf';  
-import html2canvas from 'node_modules/html2canvas/dist/html2canvas';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +10,6 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  @ViewChild('content', {static: false}) content: ElementRef;
 
   editorForm: FormGroup;
 
@@ -22,7 +18,7 @@ export class HomeComponent implements OnInit {
   show: boolean = true;
 
   editorStyle ={
-    height: '300px',
+    height: '300px'
   }
 
   ngOnInit(){
@@ -37,11 +33,4 @@ export class HomeComponent implements OnInit {
     this.show = false;
   }
 
-  makePdf() { 
-    let doc = new jsPDF();
-    let content = this.content.nativeElement;
-    doc.addHTML(content, function() {
-       doc.save("obrz.pdf");
-    });
-  }
 }

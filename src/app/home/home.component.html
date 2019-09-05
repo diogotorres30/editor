@@ -1,6 +1,6 @@
 <body class="A4">
+    <button printSectionId="print-section" ngxPrint>print</button>
     <section class="sheet padding-10mm">
-
         <div class="container">
             <form *ngIf="show" [formGroup]="editorForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
@@ -11,10 +11,8 @@
                 </div>
                 <button class="btn btn-primary mt-3">Submit</button>
             </form>
-            <button (click)="makePdf()">make pdf</button>
-            <p #content id="content" [innerHTML]="editorContent"></p>
+            <p [innerHTML]="editorContent" id="print-section"></p>
         </div>
-
     </section>
 
 </body>
