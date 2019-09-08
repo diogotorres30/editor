@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  textFormat ="Hello World!";
 
   editorForm: FormGroup;
 
@@ -17,8 +18,19 @@ export class HomeComponent implements OnInit {
 
   show: boolean = true;
 
+  options = {
+    debug: 'info',
+    modules: {
+      toolbar: '#toolbar'
+    },
+    placeholder: 'Compose an epic...',
+    readOnly: true,
+    theme: 'snow'
+  };
+
   editorStyle ={
     height: '300px'
+
   }
 
   ngOnInit(){
